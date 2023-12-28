@@ -1,26 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/Banner.css";
 import MovieSwiperComp from "./MovieSwiper";
 import "swiper/css";
 
+import movieData from "/data/movieData.json";
 
 function BannerComp() {
-  const [movies, setMovies] = useState([]);
   const [selectedMovieIndex, setSelectedMovieIndex] = useState(0);
-
-  const fetchData = async () => {
-    
-      let response = await fetch("http://localhost:5173/data/movieData.json");
-      let data = await response.json();
-      setMovies(data);
-    
-      // console.error("Error fetching data:", error);
-    
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   const handleImageChange = (index) => {
     setSelectedMovieIndex(index);
@@ -29,7 +15,7 @@ function BannerComp() {
   return (
     <>
       <div className="banner">
-        {movies && movies.map((oneObj, index) => (
+        {movieData && movieData.map((oneObj, index) => (
           <div key={index} className="movie">
             <img
               src={oneObj.bgImg}
@@ -67,8 +53,8 @@ function BannerComp() {
             </div>
           </div>
         ))}
-        {movies.length > 0 && (
-          <MovieSwiperComp slides={movies} handleChange={handleImageChange} />
+        {movieData.length > 0 && (
+          <MovieSwiperComp slides={movieData} handleChange={handleImageChange} />
         )}
       </div>
     </>
