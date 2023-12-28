@@ -10,7 +10,7 @@ function BannerComp() {
 
   const fetchData = async () => {
     
-      let response = await fetch("http://localhost:5175/data/movieData.json");
+      let response = await fetch("http://localhost:5173/data/movieData.json");
       let data = await response.json();
       setMovies(data);
     
