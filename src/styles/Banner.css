@@ -1,0 +1,136 @@
+.banner{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    /* padding: 0 100px; */
+    overflow: hidden;
+    transition: 0.5s;
+
+}
+.banner::after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.movie {
+    padding: 0 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    padding-bottom: 100px;  
+}
+
+.bgIamge{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;    
+}
+
+.bgIamge.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+.left-side{
+    position: relative;
+    width: 550px;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+    transition: 1s;
+    z-index: 1000;
+}
+
+.left-side.active{
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.details{
+    display: flex;
+    color: rgba(255, 255, 2555, 0.6);
+    font-size: 30px;
+    font-weight: 400;
+}
+.title-image{
+  max-width: 250px;
+  margin-bottom: 15px;
+
+}
+.details span{
+    border-right: 1px solid rgba(255, 255, 2555, 0.6);;
+    padding: 0 10px;
+}
+
+.details span:last-child {
+    border-right: 0;
+}
+.details span i {
+    background: orangered;
+    color: white;
+    padding: 0 8px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.left-side p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: white;
+    margin: 20px 0 30px 0 ;
+}
+.button{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+     padding: 5px 16px;
+    color: orangered;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.7s;
+    cursor: pointer;
+      background-color: white;   
+}
+.button:hover{
+    color: white;
+    background: orangered;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.button2{
+    background-color: orangered;
+    color: white;
+}
+.button2:hover{
+    background-color: white;
+    color: orangered;
+}
+
+.buttons{
+    display: inline-flex;
+    gap: 15px;
+}

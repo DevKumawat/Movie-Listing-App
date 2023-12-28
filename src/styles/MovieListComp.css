@@ -1,0 +1,59 @@
+.Box{
+    padding: 40px 50px;
+    background-color: black;
+    color: orangered;
+    /* overflow: auto; */
+}
+
+.Box::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 200px;
+    background-color:#000000;
+    filter: blur(45px);
+    bottom: -92px;
+    left:0px;
+
+}
+.Box h1{
+    margin-top: 50px;
+}
+
+.Box h1::after{
+    position: absolute;
+    content: "";
+    left: 55px;
+    bottom: -155px;
+    height: 5px;
+    width: 50%;
+    background: linear-gradient(90deg,orangered,orangered,transparent);
+}
+
+.category button{
+    padding: 2px 25px;
+    margin: 30px 3px;
+    border: none;
+    outline: none;
+    text-transform:uppercase;
+    background:#191919;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.category button:hover{
+    background-color: orangered;
+}
+
+.category .active{
+    background-color: orangered;
+}
+
+.next-prev{
+    display: flex;
+       align-items: center;
+       justify-content: center;
+       margin-top: 40px;
+    
+}
